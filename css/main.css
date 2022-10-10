@@ -1,0 +1,33 @@
+.git-logo-background {}
+
+.prompt-section {white-space:pre-line;}
+.prompt-space {white-space: pre;}
+.prompt-user {color: lime}
+.prompt-system {color: purple}
+.prompt-cwd {color: yellow}
+.prompt-prompt{color: white}
+.prompt-input {color: white}
+.prompt-git-branch {color: aqua;}
+.prompt-red {color: red;}
+.prompt-green {color: lime;}
+
+.workflow-box {
+    display: inline-flex; 
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    aspect-ratio: 1;
+    width: 15%;
+    border: 10px dashed rgba(0,0,0,0); 
+}
+.workflow-box-state {
+    border: 10px dashed white;
+}
+.workflow-files-icon {
+    /* Magic from: https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: invert(98%) sepia(53%) saturate(2%) hue-rotate(116deg) brightness(108%) contrast(100%);
+}
+.muted {
+    opacity: 0.3;
+}

@@ -4,11 +4,12 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Intro To Git and Open Source</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="css/main.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,16 +17,311 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2
-						<aside class="notes">
-						<p>Some notes</p>
-						</aside>
-						<p>Some slide text</p>
-						<aside class="notes">
-						<p>and some more notes</p>
-					</aside>
+				<section>
+					<h1>Intro to Git and Open Source</h1>
+					<div style="text-align: left; font-size: 0.5em; line-height: 0.5em;">
+						<p style="margin:0;" class="muted"><b>How to Navigate this Presentation</b></p>
+						<p style="margin:0;" class="muted">left/right: previous/next slide</p>
+						<p style="margin:0;" class="muted">up/down: previous/next (vertical) slide</p>
+						<p style="margin:0;" class="muted">esc: zoom in/out</p>
+					</div>
 				</section>
+				<section>
+					<h2>Contents</h2>
+					<ul>
+						<li>Part 1: Installing Git</li>
+						<li>Part 2: Managing a Local Project</li>
+						<li>Part 3: GitHub</li>
+						<li>Part 4: Managing a Remote Project</li>
+					</ul>
+				</section>
+				<section>
+					<h2>What do you want to get out of this workshop?</h2>
+				</section>
+				<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h2>Why Git?</h2>
+					<ul>
+						<li>Track project history</li>
+						<li>Manage changes among multiple people</li>
+					</ul>
+				</section>
+				<!-- Part 1: Installing Git -->
+				<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h1>Part 1: Installing Git</h1>
+				</section>
+				<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h2>Download</h2>
+					<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
+				</section>
+				<!-- Part 2: Managing a local project -->
+				<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h1>Part 2: Managing a Local Project</h1>
+				</section>
+				<section>
+					<section><h2>Vocabulary</h2></section>
+					<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+						<h3>Repository (noun)</h3>
+						<p>all of the files of the project and information about the project's history and management</p>
+					</section>
+					<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+						<h3>Commit (verb)</h3>
+						<p>taking a snapshot of all the tracked file changes in git</p>
+						<h3>Commit (noun)</h3>
+						<p>the snapshot of the tracked files of a repository at a specific moment in time</p>
+					</section>
+					<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+						<h3>Stage (verb)</h3>
+						<p>perparing all the information that will be committed</p>
+					</section>
+				</section>
+				<section data-auto-animate data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h2>Git Workflow</h2>
+					<div data-id="workflow-box-modify" class="workflow-box workflow-box-state">edit <img class="workflow-files-icon" src="resources/icons/files.svg"/></div>
+					<div data-id="workflow-box-git-add" class="workflow-box muted"><pre>git add</pre></div>
+					<div data-id="workflow-box-stage"  class="workflow-box workflow-box-state muted">stage</div>
+					<div data-id="workflow-box-git-commit" class="workflow-box muted"><pre>git commit</pre></div>
+					<div data-id="workflow-box-commit" class="workflow-box workflow-box-state muted">version</div>
+				</section>
+				<section data-auto-animate data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h2>Git Workflow</h2>
+					<div data-id="workflow-box-modify" class="workflow-box workflow-box-state">edit <img class="workflow-files-icon" src="resources/icons/files.svg"/></div>
+					<div data-id="workflow-box-git-add" class="workflow-box"><pre>git add</pre></div>
+					<div data-id="workflow-box-stage"  class="workflow-box workflow-box-state muted">stage</div>
+					<div data-id="workflow-box-git-commit" class="workflow-box muted"><pre>git commit</pre></div>
+					<div data-id="workflow-box-commit" class="workflow-box workflow-box-state muted">version</div>
+				</section>
+				<section data-auto-animate data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h2>Git Workflow</h2>
+					<div data-id="workflow-box-modify" class="workflow-box workflow-box-state muted">edit</div>
+					<div data-id="workflow-box-git-add" class="workflow-box muted"><pre>git add</pre></div>
+					<div data-id="workflow-box-stage"  class="workflow-box workflow-box-state">stage <img class="workflow-files-icon" src="resources/icons/files.svg"/></div>
+					<div data-id="workflow-box-git-commit" class="workflow-box muted"><pre>git commit</pre></div>
+					<div data-id="workflow-box-commit" class="workflow-box workflow-box-state muted">version</div>
+				</section>
+				<section data-auto-animate data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h2>Git Workflow</h2>
+					<div data-id="workflow-box-modify" class="workflow-box workflow-box-state muted">edit</div>
+					<div data-id="workflow-box-git-add" class="workflow-box muted"><pre>git add</pre></div>
+					<div data-id="workflow-box-stage"  class="workflow-box workflow-box-state">stage <img class="workflow-files-icon" src="resources/icons/files.svg"/></div>
+					<div data-id="workflow-box-git-commit" class="workflow-box"><pre>git commit</pre></div>
+					<div data-id="workflow-box-commit" class="workflow-box workflow-box-state muted">version</div>
+				</section>
+				<section data-auto-animate data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h2>Git Workflow</h2>
+					<div data-id="workflow-box-modify" class="workflow-box workflow-box-state muted">edit</div>
+					<div data-id="workflow-box-git-add" class="workflow-box muted"><pre>git add</pre></div>
+					<div data-id="workflow-box-stage"  class="workflow-box workflow-box-state muted">stage</div>
+					<div data-id="workflow-box-git-commit" class="workflow-box muted"><pre>git commit</pre></div>
+					<div data-id="workflow-box-commit" class="workflow-box workflow-box-state">version <img class="workflow-files-icon" src="resources/icons/files.svg"/></div>
+				</section>
+				<section>
+					<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+						<h2>Initializing a Repository</h2>
+						<pre><code data-trim>git init .</code></pre>
+					</section>
+					<section data-background-image="resources/logo/git-bash.png" data-background-position="bottom 1em left 1em" data-background-size="2em">
+						<pre class="fragment semi-fade-out prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads</span>
+							<span class="prompt-prompt">$ </span><span class="prompt-input">mkdir sample-project</span>
+						</pre>
+						<pre class="fragment fade-in-then-semi-out prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads</span>
+							<span class="prompt-prompt">$ </span><span class="prompt-input">cd sample-project</span>
+						</pre>
+						<pre class="fragment fade-in-then-semi-out prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span>
+							<span class="prompt-prompt">$ </span><span class="prompt-input">git init .</span>
+						</pre>
+						<pre class="fragment fade-in prompt-section">
+							<span class="prompt-text">Initialized empty Git repository in C:/Users/Andrew/Downloads/sample-project/.git/</span>
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ </span>
+						</pre>
+					</section>
+				</section>
+				<section>
+					<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+						<h2>Checking Status</h2>
+						<pre><code data-trim class="shell">git status</code></pre>
+					</section>
+					<section data-background-image="resources/logo/git-bash.png" data-background-position="bottom 1em left 1em" data-background-size="2em">
+						<pre class="fragment semi-fade-out prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ git status</span>
+						</pre>
+						<pre class="fragment fade-in prompt-section">
+							<span class="prompt-text">On branch master</span>
+							<span class="prompt-text">No commits yet</span>
+							<span class="prompt-text">nothing to commit (create/copy files and use "git add" to track)</span>
+						</pre>
+					</section>
+				</section>
+
+				<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h1>Git File Lifecycle</h1>
+					<p>Staged vs Unstaged</p>
+					<p>Tracked vs Untracked</p>
+					<p>Modified vs Unmodified</p>
+				</section>
+
+				<section>
+					<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+						<h2>Staging</h2>
+						<p>All files are unstaged by default.</p>
+						<p>To stage a file:</p>
+						<pre><code class="bash" data-trim>git add FILENAME</code></pre>
+						<p>To unstage a staged file:</p>
+						<pre><code class="bash" data-trim>git reset FILENAME</code></pre>
+					</section>
+
+					<section data-background-image="resources/logo/git-bash.png" data-background-position="bottom 1em left 1em" data-background-size="2em">
+						<h3>Create a file</h3>
+						<pre class="prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ echo "Hello world!" > readme</span>
+						</pre>
+					</section>
+
+					<section data-background-image="resources/logo/git-bash.png" data-background-position="bottom 1em left 1em" data-background-size="2em">
+						<h3>Check Status</h3>
+						<pre class="prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ git status</span>
+							<span class="prompt-prompt">On branch master</span>
+							<span class="prompt-prompt">No commits yet</span>
+							<span class="prompt-prompt">Untracked files:</span>
+							<span class="prompt-prompt prompt-space">  (use "git add FILE..." to include in what will be committed)</span>
+							<span class="prompt-prompt prompt-space"></span>	
+							<span class="prompt-prompt prompt-space prompt-red">    readme</span>
+						</pre>
+					</section>
+
+					<section data-background-image="resources/logo/git-bash.png" data-background-position="bottom 1em left 1em" data-background-size="2em">
+						<h3>Stage readme</h3>
+						<pre class="fragment semi-fade-out prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ git add readme</span>
+						</pre>
+						<pre class="fragment fade-in prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ git status</span>
+							<span class="prompt-prompt">On branch master</span>
+							<span class="prompt-prompt">No commits yet</span>
+							<span class="prompt-prompt">Changes to be committed:</span>
+							<span class="prompt-prompt prompt-space">  (use "git rm --cached FILE..." to unstage)</span>
+							<span class="prompt-prompt prompt-space"></span>
+							<span class="prompt-prompt prompt-space prompt-green">    new file:  readme</span>
+						</pre>
+					</section>
+					
+					<section data-background-image="resources/logo/git-bash.png" data-background-position="bottom 1em left 1em" data-background-size="2em">
+						<h3>Unstage readme</h3>
+						<pre class="fragment semi-fade-out prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ git reset readme</span>
+						</pre>
+						<pre class="fragment fade-in prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ git status</span>
+							<span class="prompt-prompt">On branch master</span>
+							<span class="prompt-prompt">No commits yet</span>
+							<span class="prompt-prompt">Untracked files:</span>
+							<span class="prompt-prompt prompt-space">  (use "git add <file>..." to include in what will be committed)</span>
+							<span class="prompt-prompt prompt-space"></span>
+							<span class="prompt-prompt prompt-space prompt-red">    readme</span>
+							<span class="prompt-prompt prompt-space"></span>
+							<span class="prompt-prompt prompt-space">nothing added to commit but untracked files present (use "git add" to track)</span>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+						<h2>Committing</h2>
+						<p>After staging all your changes you should commit them.</p>
+						<pre><code>git commit -m 'A commit message'</code></pre>
+					</section>
+					<section data-background-image="resources/logo/git-bash.png" data-background-position="bottom 1em left 1em" data-background-size="2em">
+						<h3>Stage readme</h3>
+						<pre class="fragment semi-fade-out prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ git add readme</span>
+						</pre>
+						<pre class="fragment fade-in prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ git status</span>
+							<span class="prompt-prompt">On branch master</span>
+							<span class="prompt-prompt">No commits yet</span>
+							<span class="prompt-prompt">Changes to be committed:</span>
+							<span class="prompt-prompt prompt-space">  (use "git rm --cached FILE..." to unstage)</span>
+							<span class="prompt-prompt prompt-space"></span>
+							<span class="prompt-prompt prompt-space prompt-green">    new file:  readme</span>
+						</pre>
+					</section>
+					<section data-background-image="resources/logo/git-bash.png" data-background-position="bottom 1em left 1em" data-background-size="2em">
+						<h3>Commit Changes</h3>
+						<pre class="fragment semi-fade-out prompt-section">
+							<span class="prompt-user">Andrew@DESKTOP-45FU1JG</span> <span class="prompt-system">MINGW64</span> <span class="prompt-cwd">~/Downloads/sample-project</span> <span class="prompt-git-branch">(master)</span>
+							<span class="prompt-prompt">$ git commit -m 'Initialized project with readme file'</span>
+						</pre>
+						<pre class="fragment fade-in prompt-section">
+							<span class="prompt-prompt">[master (root-commit) b28d0e4] Initialized project with readme file</span>
+							<span class="prompt-prompt"> 1 file changed, 1 insertion(+)</span>
+							<span class="prompt-prompt"> create mode 100644 readme</span>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Part 2: Review</h2>
+					<pre class="fragment fade-in-then-semi-out"><code>git init</code></pre>
+					<pre class="fragment fade-in-then-semi-out"><code>git status</code></pre>
+					<pre class="fragment fade-in-then-semi-out"><code>git add FILENAME</code></pre>
+					<pre class="fragment fade-in-then-semi-out"><code>git reset FILENAME</code></pre>
+					<pre class="fragment fade-in-then-semi-out"><code>git commit -m 'MESSAGE'</code></pre>
+				</section>
+
+				<section>
+					<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+						<h2>Tracking</h2>
+						<p>Git automatically tracks committed files once you add and commit them.</p>
+						<p>Git will tell you if a tracked file has changed when you run <code>git status</code>.</p>
+					</section>
+				</section>
+
+				<!-- Part 3: GitHub -->
+				<section>
+					<section data-background-image="resources/logo/github.png" data-background-position="bottom 1em left 1em" data-background-size="2em" >
+						<h1>Part 3: GitHub</h1>
+					</section>
+				</section>
+				<section>
+					<section data-background-image="resources/logo/github.png" data-background-position="bottom 1em left 1em" data-background-size="2em" >
+						<h2>GitHub</h2>
+						<p>A popular website for searching and sharing git repositories.</p>
+						<a href="https://github.com">https://github.com</a>
+					</section>
+				</section>
+
+				<!-- Part 4: Remote Repository -->
+				<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<h1>Part 4: Working with a Remote Repository</h1>
+				</section>
+
+				<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+					<p>You begin working with a remote repository by <b style="color: red">clone</b>-ing it to your local machine.</p>
+					<p>Once the repo has been cloned you can edit things and commit them exactly as you would for a local repository.</p>
+					<p>You <b style="color: red">pull</b> changes from the remote to your local copy to work with the newest code.</p>
+					<p>You <b style="color: red">push</b> changes from your local copy to the remote to share your changes.</p>
+				</section>
+
+				<section>
+					<section data-background-image="resources/logo/git.svg" data-background-position="bottom 1em left 1em" data-background-size="5em" >
+						<h2>Cloning</h2>
+						<pre><code>git clone REPO_URL</code></pre>
+					</section>
+				</section>
+
 			</div>
 		</div>
 
